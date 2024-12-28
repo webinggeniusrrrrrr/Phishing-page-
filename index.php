@@ -1,8 +1,8 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $message = htmlspecialchars(trim($_POST['message']));
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $name = htmlspecialchars(trim($_GET['name']));
+    $email = htmlspecialchars(trim($_GET['email']));
+    $message = htmlspecialchars(trim($_GET['message']));
 
     $errors = [];
 
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If no errors, send email
     if (empty($errors)) {
-        $to = 'destinyosagie247@gmail.com'; // Replace with your email address
+        $to = 'your_email@example.com'; // Replace with your email address
         $subject = 'New Message from Contact Form';
         $body = "Name: $name\nEmail: $email\nMessage:\n$message";
         $headers = "From: $email";
